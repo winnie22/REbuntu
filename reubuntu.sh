@@ -2,7 +2,7 @@
 
 # configuration
 INSTDIR="/opt"
-APT_PACKAGES=(python-pip python3-pip binwalk unzip g++ gdb gcc make hexedit yara apktool ssdeep tcpdump wireshark ddrescue upx-ucl sqlite3 git)
+APT_PACKAGES=(python-pip python3-pip binwalk unzip g++ gdb gcc make hexedit yara apktool ssdeep tcpdump wireshark ddrescue upx-ucl sqlite3 git openjdk-11-jdk)
 
 PIP_PACKAGES=(oletools)
 

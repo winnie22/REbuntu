@@ -33,6 +33,11 @@ function print_status_error {
 }
 
 # main
+if [ "x$(echo $USER)" != "xroot" ]; then
+	echo "This script needs to be run as root"
+	exit 1
+fi
+
 for package in ${APT_PACKAGES[*]}; do
   print_status_info "Installing apt $package"
 	DEBIAN_FRONTEND=noninteractive apt -y install $package
@@ -97,4 +102,4 @@ for rule in ${YARA_RULES[*]}; do
 done
 cd $INSTDIR
 
-
+chown -R $SUDO_USER.$SUDO_USER $INSTDIR/yara-rules $INSTDIR/pdf-parser $INSTDIR/cfr $INSTDIR/dex2jar $INSTDIR/jd-gui $INSTDIR/volatility $INSTDIR/ghidra_9.0 $INSTDIR/radare2
